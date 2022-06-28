@@ -1,7 +1,8 @@
 <template>
   <div>
-    <van-nav-bar title="登录">
+    <van-nav-bar title="登录" @click-left="$router.back()">
       <!-- <van-icon name="cross" slot="left" /> -->
+
       <template #left>
         <van-icon name="cross" />
       </template>
@@ -16,7 +17,8 @@
           { pattern: /^(?:(?:\+|00)86)?1\d{10}$/, message: '手机号不符合格式' },
         ]"
       >
-        <i class="toutiao toutiao-shouji" slot="left-icon"></i>
+        <!-- <i class="toutiao toutiao-shouji" slot="left-icon"></i> -->
+        <MyIcon name="shouji" slot="left-icon"></MyIcon>
       </van-field>
       <van-field
         v-model.trim="code"
@@ -27,7 +29,9 @@
           { pattern: /^\d{6}$/, message: '验证码的长度必须是6' },
         ]"
       >
-        <i class="toutiao toutiao-yanzhengma" slot="left-icon"></i>
+        <!-- <i class="toutiao toutiao-yanzhengma" slot="left-icon"></i> -->
+        <MyIcon name="yanzhengma" slot="left-icon"></MyIcon>
+
         <template #button>
           <van-count-down
             :time="time"
@@ -56,6 +60,7 @@
 
 <script>
 import { getSmsCode, login } from '@/api/user'
+
 export default {
   created () { },
   data () {
@@ -73,6 +78,7 @@ export default {
         const res = await login(values)
         console.log(res)
         this.$store.commit('setUser', res.data.data)
+        this.$router.push({ name: 'my' })
       } catch (err) {
         console.log(err)
       }
@@ -132,6 +138,6 @@ export default {
 }
 .van-button {
   position: fixed;
-  right: 10px;
+  right: 25px;
 }
 </style>
