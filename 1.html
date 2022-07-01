@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var arr = [
+        { id: 1, name: '吃饭' },
+        { id: 2, name: '睡觉' },
+        { id: 3, name: '打豆豆' },
+      ]
+      var arr1 = [{ id: 2, name: '睡觉' }] // filter筛选 every
+      //   每一个要符合条件就是true,否则就是false
+      console.log(
+        arr.filter((item) => arr1.every((item1) => item1.id !== item.id))
+      )
+    </script>
+  </body>
+</html>

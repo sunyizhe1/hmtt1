@@ -21,7 +21,8 @@ const routes = [
       { path: 'my', component: My, name: 'my' }
     ]
   },
-  { path: '/login', component: Login }
+  { path: '/login', component: Login },
+  { path: '/search', component: () => import('@/views/Search'), name: 'search' }
 ]
 
 const router = new VueRouter({
