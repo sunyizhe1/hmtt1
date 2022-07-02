@@ -1,5 +1,7 @@
 <template>
-  <div>问答</div>
+  <div>
+    van-nav
+  </div>
 </template>
 
 <script>
