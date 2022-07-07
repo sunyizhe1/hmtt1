@@ -13,6 +13,9 @@ import MyIcon from '@/components/MyIcon.vue'
 // 一次性把filters/index.js中所有的按需要导出全部导出来
 // 作为obj的属性
 import * as obj from '@/filters'
+// 导入组件
+import '@/components'
+
 Object.keys(obj).forEach(key => {
   Vue.filter(key, obj[key])
 })

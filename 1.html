@@ -8,16 +8,31 @@
   </head>
   <body>
     <script>
-      var arr = [
-        { id: 1, name: '吃饭' },
-        { id: 2, name: '睡觉' },
-        { id: 3, name: '打豆豆' },
-      ]
-      var arr1 = [{ id: 2, name: '睡觉' }] // filter筛选 every
-      //   每一个要符合条件就是true,否则就是false
-      console.log(
-        arr.filter((item) => arr1.every((item1) => item1.id !== item.id))
-      )
+      // var arr = [
+      //   { id: 1, name: '吃饭' },
+      //   { id: 2, name: '睡觉' },
+      //   { id: 3, name: '打豆豆' },
+      // ]
+      // var arr1 = [{ id: 2, name: '睡觉' }] // filter筛选 every
+      // //   每一个要符合条件就是true,否则就是false
+      // console.log(
+      //   arr.filter((item) => arr1.every((item1) => item1.id !== item.id))
+      // )
+      // let foods = [
+      //   { name: '西兰花', color: '绿' },
+      //   { name: '辣椒', color: '红' },
+      //   { name: '花菜', color: '白' },
+      // ]
+      // console.log(
+      //   foods.findIndex((v) => {
+      //     return v.color == '白'
+      //   })
+      // )
+
+      const a = ['1', '2', '3', '4']
+      const b = ['1', '2']
+      const c = a.filter((item) => !b.find((item1) => item1 === item))
+      console.log(c)
     </script>
   </body>
 </html>
