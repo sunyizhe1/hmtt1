@@ -7,6 +7,7 @@
     <title>Document</title>
   </head>
   <body>
+    <input type="file" id="file" />
     <script>
       // var arr = [
       //   { id: 1, name: '吃饭' },
@@ -29,10 +30,22 @@
       //   })
       // )
 
-      const a = ['1', '2', '3', '4']
-      const b = ['1', '2']
-      const c = a.filter((item) => !b.find((item1) => item1 === item))
-      console.log(c)
+      // const a = ['1', '2', '3', '4']
+      // const b = ['1', '2']
+      // const c = a.filter((item) => !b.find((item1) => item1 === item))
+      // console.log(c)
+
+      var file = document.getElementById('file')
+      file.onchange = function () {
+        console.dir(this.files[0])
+        //this.files[0]得到上传的文件的对象
+        //URL.createObjectURL(File实例对象)得到这个文件在内存中的临时路径
+        var res = URL.createObjectURL(this.files[0])
+        console.log(res)
+        var img = document.createElement('img')
+        img.src = res
+        document.body.append(img)
+      }
     </script>
   </body>
 </html>
